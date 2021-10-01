@@ -1,0 +1,24 @@
+@import "variables";
+
+body{
+  background: #F4F7FD;
+  color: #3c4142;
+  font-family: $pop;
+}
+.btn {
+  color: #fff;
+  border-radius: 15px;
+  padding: .2rem 1rem;
+}
+.btn-primary {
+  color: #FFF;
+  background: linear-gradient( 140deg, #42c3ca 0%, #42c3ca 50%, #42c3cac7 75% ) !important;
+  border:1.5px solid  #42c3ca;
+}
+.btn-primary:hover, .btn-danger:hover {
+  border:1.5px solid #FFF;
+}
+header{
+  background-color: #343a40 ;
+}
+

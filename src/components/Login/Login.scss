@@ -1,0 +1,164 @@
+@import "../../variables";
+.container-login {
+    width: 100%;  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+
+    .login-box {
+        width: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 55px 55px 37px 55px;  
+        background: $primary-blue;
+      }        
+
+    h1 {    
+        font-size: 30px;
+        color: #fff;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;  
+        display: block;
+        margin: 20px 0;
+      }
+
+      .form-logo {
+        font-size: 60px; 
+        color: #333333;  
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: url(../../images/key.png) no-repeat center center #fff;
+        margin: 0 auto;
+      }
+      .input-box {
+        width: 100%;
+        position: relative;
+        border-bottom: 2px solid rgba(255,255,255,0.24);
+        margin-bottom: 30px;
+        input{    
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.2;  
+            display: block;
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            padding: 0 5px 0 38px;
+            border: 0;
+          }
+        input:focus {
+        padding-left: 5px;
+        border: 0;
+        outline: none;
+        }
+        
+        input:focus + .input-focus::after {
+        top: -18px;
+        font-size: 18px;
+        }
+        
+        input:focus + .input-focus::before {
+        width: 100%;
+        }            
+
+
+      }
+
+      .input-focus {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+      
+      .input-focus::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;  
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;  
+        background: #fff;
+      }
+      
+      .input-focus::after {
+          content: '';
+        font-size: 22px;
+        color: #fff;  
+        background: url(../../images/user.png) no-repeat left center;
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 14px;
+        left: 0px;
+        padding-left: 5px;  
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      
+
+      .login-form-btn{
+        border: 0;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 auto;
+        color: #555555;
+        line-height: 1.2;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        min-width: 120px;
+        height: 50px;
+        border-radius: 25px;
+        background: #FFF;
+        position: relative;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      .login-form-btn:hover{
+        background:$dark-blue;
+        color:#FFF;
+      }        
+    
+
+  }
+
+  
+  

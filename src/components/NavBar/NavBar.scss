@@ -1,0 +1,12 @@
+.navbar {
+  padding: 20px 15px;
+  margin-bottom: 50px;
+  h1 {
+    .navbar-brand {
+      font-size: 1.75rem;
+    }
+  }
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
