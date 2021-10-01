@@ -1,3 +1,7 @@
+Login with any user listed here https://jsonplaceholder.typicode.com/users
+For example: Bret or Antonette or Samantha
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
