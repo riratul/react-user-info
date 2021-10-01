@@ -1,43 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Button
-} from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
-import services from '../../services';
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import services from "../../services";
 
-
-
-const EditPost = ({match: { params }}) => {
+const EditPost = ({ match: { params } }) => {
   const history = useHistory();
 
   const postId = params.id;
-  const [postTitle, setPostTitle] = useState('');
-  const [postBody, setPostBody] = useState('');
+  const [postTitle, setPostTitle] = useState("");
+  const [postBody, setPostBody] = useState("");
 
   const loadPost = async () => {
     try {
       const resp = await services.editPost(postId);
-      const post = resp.data;      
+      const post = resp.data;
       setPostTitle(post.title);
       setPostBody(post.body);
-    }catch(error) {
-      alert('Failed to get post.')
+    } catch (error) {
+      alert("Failed to get post.");
     }
-  }
+  };
 
   useEffect(() => {
-    loadPost()
+    loadPost();
   }, []);
-
 
   const handleSubmit = async () => {
     try {
-      if(!postTitle || !postBody) {
-        alert('Title or post URL is required!');
+      if (!postTitle || !postBody) {
+        alert("Title or post URL is required!");
         return;
       }
       const post = {
@@ -45,15 +36,15 @@ const EditPost = ({match: { params }}) => {
         postBody,
       };
       await services.addPost(post);
-      alert('Post updated successfully!');
-      history.replace('/');
-    }catch(error) {
+      alert("Post updated successfully!");
+      history.replace("/allposts");
+    } catch (error) {
       console.log(error);
-      alert('update post failed!');
+      alert("update post failed!");
     }
-  }
+  };
 
-  if(!postTitle || !postBody) {
+  if (!postTitle || !postBody) {
     return (
       <Container>
         <Row>
@@ -62,39 +53,37 @@ const EditPost = ({match: { params }}) => {
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 
   return (
     <Container>
       <Row>
-        <Col className='col-md-6 offset-md-3'>
+        <Col className="col-md-6 offset-md-3">
+          <h2>Edit post number {postId}</h2>
           <Form>
-            <Form.Group>
+            <Form.Group className="formRow">
               <Form.Label>Post Title</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter post title ..."
-                onChange={e => setPostTitle(e.target.value)}
+                onChange={(e) => setPostTitle(e.target.value)}
                 value={postTitle}
               />
             </Form.Group>
 
-            <Form.Group>
+            <Form.Group className="formRow">
               <Form.Label>Body</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter post Body...."
-                onChange={e => setPostBody(e.target.value)}
+                onChange={(e) => setPostBody(e.target.value)}
                 value={postBody}
               />
             </Form.Group>
 
-            <Form.Group>
-              <Button
-                variant="primary"
-                onClick={handleSubmit}
-              >
+            <Form.Group className="formRow">
+              <Button variant="primary" onClick={handleSubmit}>
                 Update
               </Button>
             </Form.Group>
