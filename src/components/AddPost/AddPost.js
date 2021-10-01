@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import services from "../../services";
+import NavBarInner from "../NavBarInner/NavBarInner";
 import "./AddPost.scss";
 
 function AddPost() {
@@ -32,6 +33,7 @@ function AddPost() {
 
   return (
     <Container>
+      <NavBarInner />
       <Row>
         <Col className="col-md-6 offset-md-3">
           <h2>Add New Post</h2>

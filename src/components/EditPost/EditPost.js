@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import services from "../../services";
+import NavBarInner from "../NavBarInner/NavBarInner";
 
 const EditPost = ({ match: { params } }) => {
   const history = useHistory();
@@ -58,6 +59,7 @@ const EditPost = ({ match: { params } }) => {
 
   return (
     <Container>
+      <NavBarInner />
       <Row>
         <Col className="col-md-6 offset-md-3">
           <h2>Edit post number {postId}</h2>
