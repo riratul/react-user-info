@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import services from "../../services";
@@ -6,7 +6,6 @@ import "./Login.scss";
 
 function Login() {
   const history = useHistory();
-
   const [username, setUsername] = useState("");
   const [users, setUsers] = useState([]);
 
@@ -23,7 +22,10 @@ function Login() {
     fetchUsers();
   }, []);
 
-  const allUsernames = users.map((userItem) => userItem.username.toLowerCase());
+  const allUsernames = React.useMemo(
+    () => users.map((userItem) => userItem.username.toLowerCase()),
+    [users]
+  );
 
   const handleLogin = async () => {
     // console.log('Hellooooooo' + username );
