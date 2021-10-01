@@ -23,7 +23,7 @@ function Login() {
     fetchUsers();
   }, []);
 
-  const allUsernames = users.map((userItem) => userItem.username);
+  const allUsernames = users.map((userItem) => userItem.username.toLowerCase());
 
   const handleLogin = async () => {
     // console.log('Hellooooooo' + username );
@@ -31,11 +31,12 @@ function Login() {
       alert("Post enter your username!");
       return;
     }
-    const found = allUsernames.includes(username);
+    const lowerCaseUsername = username.toLowerCase();
+    const found = allUsernames.includes(lowerCaseUsername);
     if (found) {
       history.push("/allposts");
     } else {
-      alert("USERNAME NOT FOUND");
+      alert("Provided username does not exist!");
     }
   };
 
