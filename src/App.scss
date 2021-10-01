@@ -18,11 +18,11 @@ body {
     #42c3ca 50%,
     #42c3cac7 75%
   ) !important;
-  border: 1.5px solid #42c3ca;
+  border: 0;
 }
 .btn-primary:hover,
 .btn-danger:hover {
-  border: 1.5px solid #fff;
+  border: 0;
   background: $dark-blue !important;
 }
 header {
